@@ -1,2 +1,11 @@
 ---
 # tasks file for test_a
+- name: Example file creation metadata passing
+  template:
+    src: hello.txt
+    dest: /home/ec2-user/hello.txt
+    owner: ec2-user
+    group: ec2-user
+    mode: 0700
+  become: true
+  become_user: root
